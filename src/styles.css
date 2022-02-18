@@ -25,28 +25,44 @@
   .col-12 {width: 100%;}
 }
 
-body {
-  margin: 0;
+.mobile-banner, .desktop-banner {max-width: 100%;}
+.mobile-banner {display: block;}
+.desktop-banner {display: none;}
+
+@media only screen and (min-width: 760px) {
+    .mobile-banner {display: none;}
+    .desktop-banner {display: block;}
 }
 
-ul {
+html {
+  min-height:100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: Verdana, sans-serif;
+}
+
+.desktop-banner {
+  float: right;
+  width: 60%;
+  height: 5%;
+}
+
+.desktop-banner ul {
   list-style-type: none;
   position: absolute;
   top: 0px;
-  right: 0px;
-  left: 0px;
+  right: 0%;
+  left: 50%;
   height: 20%;
   overflow: hidden;
 }
 
-.navbar {
-  float: left;
-  width: 100%;
-  height: 5%;
-}
-
-.navbar a {
-  font-size: 120%;
+.desktop-banner a {
+  font-size: 110%;
   text-align: center;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
@@ -62,7 +78,7 @@ ul {
   transition: 200ms linear;
 }
 
-.navbar a:hover {
+.desktop-banner a:hover {
   color: #EBEBEB;
   opacity : 1;
   transform: scale (1.1);
@@ -70,20 +86,142 @@ ul {
   border-radius: 3px;
 }
 
-.navbar a.active {
+.desktop-banner a.active {
   background-color: #0474ba;
   color: #EBEBEB;
   border-radius: 5px;
 }
 
+.mobile-banner {
+  width: 100%;
+  height: 3em;
+  color: #000000;
+  background-color: #ebebeb;
+}
+
+.mobile-banner ul {
+  list-style:none;
+  position: absolute;
+  color: #000000;
+  background-color: #ebebeb;
+  top: -9px;
+  right: 0px;  
+  margin: 0;
+  padding: 0;
+  width: 6em;
+  border-radius:20px;  
+  margin: 20px;  
+}
+
+.mobile-banner ul li {
+  display:block;
+  height: 31px;  
+  background: #ebebeb;
+  padding: 6px;
+  color:rgb(12, 8, 8);
+  font-size: 17px;
+  border-top:1px solid rgba(255,255,255,.1);  
+}
+
+.mobile-banner ul li:hover {
+  background:#00A7E1;
+  font-size: 19px;
+  color: #ebebeb;
+}
+
+.mobile-banner a.active {
+  background-color: #6b6b6b;
+  padding-top: 8px;
+  padding-left: 1px;
+  padding-right: 38px;
+  padding-bottom: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  color: #ebebeb;
+}
+
+.mobile-banner ul li:last-child {
+  border-bottom-left-radius:4px;
+  border-bottom-right-radius:4px;
+}
+
+.mobile-banner label:before {
+  padding-bottom: 25px;
+  width: 90px;
+  text-align: center;
+  display: block;
+  transition:all .7s;
+  position:absolute;
+  opacity:0.2;
+}
+
+.mobile-banner label {
+  display:block;
+  top: 0px;
+  width: 88px;
+  height: 35px;
+  position: absolute;
+  text-align: center;
+  font-size: 18px;
+  padding: 4px;
+  color:#000000;  
+  cursor:pointer; 
+}
+
+input[type="checkbox"]{
+  visibility: hidden;
+  position:absolute;
+}
+
+#collapse:checked ~ li{
+  display:none;
+  margin-top:0; 
+}
+
+#collapse:checked + label:before{
+  position:relative;
+  right:calc(-160px);
+  opacity:1;
+}
+
+
+/* .okrun-logo {
+  position: fixed;
+  top: 0px;
+  right: 0%;
+} */
+
+img {
+  position: absolute;
+  display: block;
+  top: 10px;
+  width: 6.6em;
+  height: .9em;
+}
+
 .page-content {
   position: absolute;
   text-align: center;
-  bottom: 0px;
+  top: 80%;
+  bottom: 0%;
   right: 0px;
   left: 0px;
-  width: 100%;
-  height: 60%;
+  width: auto;
+  height: 60em;
   padding: 2%;
   background-color: #EBEBEB;
+  page-break-after: always
 }  
+
+.page-additional-content {
+  position: absolute;
+  background-color: #4C6575;
+  text-align: center;
+  left: 0px;
+  right: 0px;
+  top: 175%;
+  bottom: 0%;
+  width: 100%;
+  height: 25em;
+}
+

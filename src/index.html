@@ -5,19 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title> Disco - Okrun.Softworks</title>   
+    <title> okrun softworks: home</title>   
   </head>
   <body>
-    <ul>
-      <div class="navbar">
-        <a class="active" href="#">HOME</a>
-        <a href="#">CONTENT</a>
-        <a href="#">ABOUT</a>
-        <a href="#">CONTACT</a>
+    <div class="desktop-banner">
+      <ul>
+        <a class="active" href="/">home</a>
+        <a href="https://www.okrunsoftworks.com/content">content</a>
+        <a href="https://www.okrunsoftworks.com/about">about</a>
+        <a href="https://www.okrunsoftworks.com/contact">contact</a>
+      </ul>
+    </div>
+    <div class="mobile-banner">
+      <ul>
+       <input type="checkbox" id="collapse"/> 
+       <label for="collapse">menu</label> 
+       <li></li>
+       <li><a class="active">home</a></li>
+       <li>content</li>
+       <li>about</li>
+       <li>contact</li>
+      </ul>
+    </div>
+    <page-break-after>
+      <div class="page-content">
+        
       </div>
-    </ul>
-    <div class="page-content">
-      Hello World
+    </page-break-after>
+    <div>
+      <div class="page-additional-content">
+        <h3>Hello all, and welcome</h3>endl;
+        <p>this is just test text to determine how the screen stretches and works. thanks come again!</p>
+      </div>
     </div>
   <!--scripts-->
   <script src="THREE.js"></script>
